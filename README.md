@@ -1,19 +1,15 @@
 # AutoBIM downloads
 
-Repositório só de **GitHub Releases**. O git não guarda `.exe` nem `.dll`.
+Cada produto tem uma pasta com o texto da versão. O `.exe` não entra no git: ele vai na **Release** com a tag daquela versão. É o mesmo desenho do winget e das releases do GitHub (VS Code, por exemplo): a pasta descreve, o binário fica no anexo da release. Colocar o `.exe` na pasta incha o histórico para sempre.
 
-Cada produto tem uma release por versão. A tag diz qual produto é; o arquivo diz a versão.
+| Pasta | Produto |
+|---|---|
+| [GEO_3D](GEO_3D/README.md) | Geometria rodoviária, Civil 3D 2023–2027 |
+| [DRE_3D](DRE_3D/README.md) | Drenagem 3D, Civil 3D 2023–2027 |
+| [DRE_CAL](DRE_CAL/README.md) | Pré-dimensionamento de drenagem, Civil 3D 2026 |
 
-| Produto | O que o instalador traz | Tag | Arquivo |
-|---|---|---|---|
-| [AutoBIM-GEO_3D](https://github.com/AutoBIM-Solutions/AutoBIM-GEO_3D) | Plugin de geometria rodoviária (bundle `AutoBIM.Geo3D`) para Civil 3D 2023–2027 | `GEO_3D-vX.Y.Z` | `AutoBIM-GEO_3D_Instalador_X.Y.Z.exe` |
-| [AutoBIM-DRE_3D](https://github.com/AutoBIM-Solutions/AutoBIM-DRE_3D) | Plugin de drenagem 3D (`DrenagemQTD`) para Civil 3D 2023–2027 | `DRE_3D-vX.Y.Z` | `AutoBIM-DRE_3D_Instalador_X.Y.Z.exe` |
-| [AutoBIM-DRE_CAL](https://github.com/AutoBIM-Solutions/AutoBIM-DRE_CAL) | Pré-dimensionamento de drenagem para Civil 3D 2026 | `DRE_CAL-vX.Y.Z` | `AutoBIM-DRE_CAL_Instalador_X.Y.Z.exe` |
+Tag: `<PRODUTO>-vX.Y.Z`. Arquivo: `AutoBIM-<PRODUTO>_Instalador_X.Y.Z.exe`.
 
-O `.exe` é gerado no repositório do produto com `deploy/InstaladorGUI/gerar_instalador.ps1`, depois que o bundle foi compilado numa máquina com Civil 3D. A publicação acontece depois do commit da versão, não a cada commit.
-
-URL estável para a plataforma (`installer_url`):
+URL para a plataforma:
 
 `https://github.com/AutoBIM-Solutions/autobim-downloads/releases/download/<tag>/<arquivo>.exe`
-
-As notas da release devem dizer: nome do produto, o que instala no Civil 3D, anos suportados, versão e o commit de origem.
